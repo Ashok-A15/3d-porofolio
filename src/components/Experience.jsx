@@ -4,12 +4,21 @@ import { useFrame } from '@react-three/fiber'
 
 function RoomModel() {
   const { scene } = useGLTF('/room.glb')
-  // Restored exact layout to match user's favorite screenshot
+  
+  // Sync with CSS breakpoint (1024px)
+  // Use window.innerWidth instead of canvas size for consistency
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024
+  
+  const scale = isMobile ? 0.9 : 1.2
+  // Adjusted x-position for desktop (from 0.5 to 1.5) to move the table 
+  // away from the left edge of the screen.
+  const position = isMobile ? [0, -1, 0] : [1.5, -1.5, -1]
+
   return (
     <primitive
       object={scene}
-      scale={1.2}
-      position={[1, -1.5, -1]}
+      scale={scale}
+      position={position}
       rotation={[0, -1, 0]}
     />
   )

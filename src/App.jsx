@@ -128,6 +128,7 @@ export default function App() {
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
+          <a href="#opensource">Open Source</a>
           <a href="#certificates">Certificates</a>
           <a href="#contact">Contact</a>
         </div>
@@ -280,6 +281,67 @@ export default function App() {
                   <p className="project-desc">{project.desc}</p>
                 </motion.div>
               ))}
+            </div>
+          </motion.div>
+        </section>
+
+        {/* OPEN SOURCE SECTION */}
+        <section id="opensource" className="content-section">
+          <motion.div
+            className="glass-panel"
+            variants={fadeUpVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <h2 className="section-title neon-text-purple">Open Source Activity</h2>
+            <div className="github-activity-container">
+              <div className="github-activity-text">
+                <p>
+                  I'm actively participating in <strong>daily open-source contributions</strong> on GitHub, building tools, contributing to repositories, and refining my engineering skills every single day.
+                </p>
+                <p>
+                  Building in public allows me to collaborate with other developers, practice continuous integration, write clean modular code, and create impactful software.
+                </p>
+              </div>
+
+              {/* Live GitHub Calendar chart */}
+              <div className="github-calendar-wrapper glass">
+                <h3 className="github-calendar-title">Contribution Calendar</h3>
+                <img
+                  src="https://ghchart.rshah.org/00f0ff/Ashok-A15"
+                  alt="Ashok's GitHub Contribution Chart"
+                  className="github-calendar-img"
+                />
+              </div>
+
+              <div className="github-stats-wrapper">
+                {/* GitHub Streak Stats */}
+                <div className="github-stat-card glass">
+                  <img
+                    src="https://github-readme-streak-stats.herokuapp.com/?user=Ashok-A15&theme=tokyonight&background=050b14&ring=00f0ff&fire=3a86ff&currStreakNum=00f0ff&sideNums=a0aec0&sideLabels=a0aec0&dates=a0aec0"
+                    alt="Ashok's GitHub Streak"
+                  />
+                </div>
+                {/* GitHub General Stats */}
+                <div className="github-stat-card glass">
+                  <img
+                    src="https://github-readme-stats.vercel.app/api?username=Ashok-A15&show_icons=true&theme=tokyonight&bg_color=050b14&title_color=00f0ff&icon_color=3a86ff&text_color=a0aec0"
+                    alt="Ashok's GitHub Stats"
+                  />
+                </div>
+              </div>
+
+              <div className="github-action">
+                <a
+                  href="https://github.com/Ashok-A15"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="contact-btn github-btn"
+                >
+                  <GithubIcon size={20} /> View My GitHub Profile
+                </a>
+              </div>
             </div>
           </motion.div>
         </section>
