@@ -1,2 +1,1 @@
-# 3d-porofolio
-  
+# 3d-portfolio
